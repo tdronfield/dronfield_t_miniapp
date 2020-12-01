@@ -20,7 +20,7 @@ async function fetchData(sourceURL) {
     let dataset = await resource.json();
 
     return dataset[0];
-    debugger;
+    // debugger;
 }
 
 async function postData(sourceURL){

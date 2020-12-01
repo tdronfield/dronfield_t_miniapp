@@ -1,5 +1,5 @@
 export default {
-    name:"TheCarCard",
+    name:"CarCard",
 
     props: ["item"],
 
@@ -8,21 +8,23 @@ export default {
         return {
             myName: this.item.name,
             myColour: this.item.colour,
-            myInfo: this.item.info
+            myInfo: this.item.info,
         }
     },
 
     template: 
-        `<div>
+        `<div class="cars">
             <h3>Name: {{ item.name }}</h3>
             <h3>Color: {{ item.colour }}</h3>
-            <p> {{ item.info }} </p>
-            <img :src="'images/' + item.avatar" alt="Mini Cooper Car" @click="logClicked">
+            <p class="biodata"> {{ item.info }} </p>
+            <img :src="'images/' + item.avatar" alt="Mini Cooper Car">
+            <br><br>
+            <a href="" class="remove-prof" @click.prevent="showProfData(item), logClicked(item)" >Show {{ item.name }} info</a>
 
-            <a href="" class="remove-prof" @click.prevent="showProfData(item)" >Show {{ item.name }} info</a>
-
-            <a href="" class="remove-prof" @click.prevent="removeProf(item)" >Remove {{ item.name }}</a>
         </div>`,
+
+        // <a href="" class="remove-prof" @click.prevent="removeProf(item)" >Remove {{ item.name }}</a>
+
 
     created: function() {
         console.log('Loaded a Car card');
@@ -30,11 +32,7 @@ export default {
 
     methods: {
         logClicked() {
-            console.log("Clicks a thing");
-        },
-
-        clickHeader(){
-            console.log("Clicked the header");
+            console.log(`Fired from inside ${this.item.name}'s component`)
         },
 
         showProfData(target){
@@ -43,25 +41,10 @@ export default {
 
             // toggle the property between true and false using a ternary statement
             this.showBioData = this.showBioData ? false: true;
-
+            
             // make the selected profs data visible
             this.currentItemData = target;
-
-        },
-
-        removeProf(target){
-            console.log('Clicked to remove Car', target, target.name);
-            // THIS keyword refers to VUE
-
-            // make the selected prof's data be removed from the array
-            // POP the last obj out of the array, then return the rest of the remaining objects 
-            // SPLICE method
-            //this.collection.splice(this.collection.indexOf(target), 1);
-
-            // delete method, not working for me
-            this.$delete(this.collection, target);
+            
         }
-    },
-
-    
+    }
 }

@@ -1,13 +1,16 @@
 @import 'components/_vars.scss';
-@import 'components/_card.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap');
 @import 'components/_mini.scss';
 
-.bio-data { display: none;}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap');
 
-.show-bio { display: block !important; }
+
+.biodata { display: none;}
+
+.showBioData { display: block !important; }
 
 .hidden { display: none; }
+
+main { margin: auto; }
 
 h1, h2 { 
     font-family: 'Roboto', Arial, sans-serif;
