@@ -1,0 +1,8 @@
+WRITTEN PLAN PATH
+- Set up HTML Code and CSS/SASS for static view
+- Add VUE to js, use Vue to make cards for each car
+- Connect to a database to fetch data
+- Set up function in js to show/hide info
+ > click event tied to every card
+ > Click event logs active car 
+ > active car's card shows/hides paragraph of info

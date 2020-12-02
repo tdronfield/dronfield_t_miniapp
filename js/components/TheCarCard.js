@@ -9,6 +9,9 @@ export default {
             myName: this.item.name,
             myColour: this.item.colour,
             myInfo: this.item.info,
+
+            currentItemData: {},
+            showBioData: false,
         }
     },
 
@@ -19,7 +22,7 @@ export default {
             <p class="biodata"> {{ item.info }} </p>
             <img :src="'images/' + item.avatar" alt="Mini Cooper Car">
             <br><br>
-            <a href="" class="remove-prof" @click.prevent="showProfData(item), logClicked(item)" >Show {{ item.name }} info</a>
+            <a href="" class="remove-prof" @click.prevent="showbio" >Show {{ item.name }} info</a>
 
         </div>`,
 
@@ -31,20 +34,24 @@ export default {
     },
 
     methods: {
-        logClicked() {
-            console.log(`Fired from inside ${this.item.name}'s component`)
-        },
+        showbio(target) {
+            console.log(`Fired from inside ${this.item.name}'s component`);
 
-        showProfData(target){
-            console.log("Clicked to view Car info", target, target.name);
-            //the this keyword inside a vue instance REFERS to the vue instance itself by default
-
-            // toggle the property between true and false using a ternary statement
             this.showBioData = this.showBioData ? false: true;
-            
-            // make the selected profs data visible
             this.currentItemData = target;
-            
         }
+
+        // showProfData(target){
+        //     console.log("Clicked to view Car info", target, target.name);
+        //     //the this keyword inside a vue instance REFERS to the vue instance itself by default
+
+        //     // toggle the property between true and false using a ternary statement
+        //     
+        //     debugger;
+            
+        //     // make the selected profs data visible
+        //     this.currentItemData = target;
+            
+        // }
     }
 }

@@ -21,7 +21,7 @@
         <h2 class="title">CHOOSE</h2>
         <h2 class="yourmini">YOUR<br>MINI</h2>
 
-        <car-card v-for="item in collection" :item="item" :key="item.id"></car-card>
+        <car-card @showmydata="showbio" v-for="item in collection" :item="item" :key="item.id"></car-card>
 
     </main>
     <script src="js/main.js" type="module"></script> 
