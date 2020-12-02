@@ -9,3 +9,4 @@ Download ZIP to your www directory and navigate to your localhost/directory name
 ## Credits
 
 Taylor Dronfield
+MINI
