@@ -11,7 +11,7 @@ export default {
             myInfo: this.item.info,
 
             currentItemData: {},
-            showBioData: false,
+            showBioData: false
         }
     },
 
@@ -19,10 +19,10 @@ export default {
         `<div class="cars">
             <h3>Name: {{ item.name }}</h3>
             <h3>Color: {{ item.colour }}</h3>
-            <p class="biodata"> {{ item.info }} </p>
+            <p :class="{'biodata' : showBioData}"> {{ item.info }} </p>
             <img :src="'images/' + item.avatar" alt="Mini Cooper Car">
             <br><br>
-            <a href="" class="remove-prof" @click.prevent="showbio" >Show {{ item.name }} info</a>
+            <a href="" class="remove-prof" @click.prevent="showbio" >Toggle {{ item.name }} Info</a>
 
         </div>`,
 
